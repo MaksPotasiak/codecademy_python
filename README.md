@@ -1,3 +1,3 @@
 # codecademy_python
 
-this is the main branch
+this is the develop branch
