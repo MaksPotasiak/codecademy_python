@@ -1,3 +1,8 @@
 # codecademy_python
 
-this is the main branch
+This is my practice space for python.
+
+
+Projects completed:
+
+The Divisibility Calculator
