@@ -22,7 +22,7 @@ while check2:
 
     divider = raw_input()
 
-    if divider.isdigit():
+    if divider.isdigit() and int(divider) != 0:
         
 
         if (int(number) % int(divider)) == 0:
@@ -32,6 +32,9 @@ while check2:
             print"No, %s is not divisible by %s." % (number, divider)
 
         check2 = False
+
+    elif int(divider) == 0: 
+        print"The divider must not equal 0, please enter a valid integer."
 
     else:
         print"Sorry, you must enter an integer for the divider, please try again."
