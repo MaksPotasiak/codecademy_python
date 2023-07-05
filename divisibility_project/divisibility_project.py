@@ -1,7 +1,7 @@
 print"""
 Welcome to the divisibility calculator.
 
-Please enter an intiger you\'d like to check:"""
+Please enter an integer you\'d like to check:"""
 
 check1 = True
 
