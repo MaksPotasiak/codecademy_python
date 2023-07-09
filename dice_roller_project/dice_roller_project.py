@@ -1,6 +1,14 @@
 import random
 
-print("\n" + "Welcome to the dice roller!")
+print("\n" + "Welcome to the dice roller!" + "\n")
+
+def dice_input():
+    input = raw_input("What dice are we rolling?" + "\n")
+    while not "d" in input:
+        input = raw_input("Invalid input." + "\n")
+    return input.split("d")
+
+dice_user_data = dice_input()
 
 def input_checker(user_input):
     if user_input.isdigit() and int(user_input) != 0:
@@ -8,13 +16,16 @@ def input_checker(user_input):
     else:
         return False
 
-# roll_dice generates rolls nad puts them into a list.
+# roll_dice generates rolls and puts them into a list.
 def roll_dice(number_of_dice, size_of_dice):
-    while input_checker(number_of_dice) and input_checker(size_of_dice):
+    if input_checker(number_of_dice) and input_checker(size_of_dice):
         rolls = []
         for i in range(int(number_of_dice)):
             rolls.append(random.randint(1, int(size_of_dice)))
-        return rolls 
-    return "Invalid input"
+        print rolls
+        return rolls
+    else:
+        print "Invalid input, try again." + "\n" 
+        return dice_input()
 
-print roll_dice("4", "8")
+print sum(roll_dice(dice_user_data[0], dice_user_data[1]))
