@@ -6,7 +6,12 @@ print("\n" + "Welcome to the dice roller!" + "\n")
 def dice_input():
     input = raw_input("What dice are we rolling?" + "\n" + "Use x\"d\"y format, where x and y are integers:" + "\n")
     while not "d" in input:
-        input = raw_input("Invalid input, please try again.")
+        input = raw_input("""
+Invalid input, please try again.
+
+What dice are we rolling?
+Use x\"d\"y format, where x and y are integers:
+""")
     return input.split("d")
 
 #input_checker checks if user values are valid.
@@ -32,8 +37,7 @@ def total_value():
     if input_checker(number_of_dice) and input_checker(size_of_dice):
         print sum(roll_dice(number_of_dice, size_of_dice))
     else:
-        print "Invalid input, please try again." + "\n"
+        print "\n" + "Invalid input, please try again." + "\n"
         total_value()
     
 total_value()
-    
